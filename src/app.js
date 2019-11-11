@@ -6,6 +6,7 @@ const forecast = require("./utils/weather");
 
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Defining our absolute path strings using path.join and __dirname
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -97,7 +98,7 @@ app.get("*", (req, res) => { //404 route should come last
 })
 
 //Putting server live on port 3000
-app.listen(3000, () => {
-    console.log("Server is up on port 3000.")
+app.listen(port, () => {
+    console.log("Server is up on port " + port);
 });
 
